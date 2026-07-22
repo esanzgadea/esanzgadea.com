@@ -25,7 +25,11 @@
 
     $container.isotope({
       itemSelector: '.item',
-      layoutMode: 'fitRows',
+      layoutMode: 'masonry',
+      percentPosition: true,
+      masonry: {
+        columnWidth: '.archive-sizer'
+      },
       transitionDuration: '420ms'
     });
     var categoryFilter = '*';
@@ -33,7 +37,9 @@
 
     $(window).resize(function() {
       $container.isotope({
-        columnWidth: '.col-sm-3'
+        masonry: {
+          columnWidth: '.archive-sizer'
+        }
       });
     });
 
@@ -103,6 +109,9 @@
       var showNext = function() {
         index = (index + 1) % images.length;
         $image.attr('src', images[index]);
+        $image.one('load', function() {
+          $('#portfolio-grid').isotope('layout');
+        });
       };
 
       $project.on('mouseenter focusin', function() {
