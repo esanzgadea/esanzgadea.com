@@ -537,7 +537,7 @@ h1, h2, h3, h4, h5, h6, .font-heading {
   color: #7F7F7F;
   /*--font-size: 25px; --*/
   /*--arrows:⭠⮠ --*/
-  content: "\2190  My Personal Archive.";
+  content: "Archive";
   text-decoration: none;
 }
 
@@ -555,7 +555,7 @@ h1, h2, h3, h4, h5, h6, .font-heading {
 .mipers2:hover:before {
   color: #7F7F7F;
   /*--font-size: 25px; --*/
-  content: "My Personal Archive.";
+  content: "Archive";
   text-decoration: none;
 }
 
@@ -1086,6 +1086,23 @@ div.sticky {
 .archive-home {
   background: #fff;
   color: #111;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.archive-home #main {
+  flex: 1 0 auto;
+}
+
+.archive-home .footer {
+  flex-shrink: 0;
+}
+
+.archive-home .footer p,
+.archive-home .footer .credits {
+  font-size: 70%;
+  line-height: 1.35;
 }
 
 .archive-home a {
@@ -1138,14 +1155,16 @@ div.sticky {
   display: flex;
   justify-content: space-between;
   gap: 1rem;
-  align-items: center;
-  margin-bottom: 1rem;
-  padding-top: 0.7rem;
-  border-top: 1px solid #e8e8e8;
+  align-items: flex-end;
+  margin-bottom: 0;
+  padding: 1.35rem 0 0.85rem;
+  border-bottom: 1px solid #e8e8e8;
 }
 
-.archive-filter-row p {
-  margin: 0;
+.archive-count-row {
+  display: flow-root;
+  margin: 1.2rem 0 1rem;
+  text-align: right;
   color: #777;
   font-size: 0.85rem;
   white-space: nowrap;
