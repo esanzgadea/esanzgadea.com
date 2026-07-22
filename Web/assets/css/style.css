@@ -537,7 +537,7 @@ h1, h2, h3, h4, h5, h6, .font-heading {
   color: #7F7F7F;
   /*--font-size: 25px; --*/
   /*--arrows:⭠⮠ --*/
-  content: "⭠ My Personal Archive.";
+  content: "\2190  My Personal Archive.";
   text-decoration: none;
 }
 
@@ -1259,18 +1259,37 @@ div.sticky {
   padding-top: 4rem;
 }
 
-.about-original .archive-navbar {
-  padding-top: 50px;
-}
-
-.about-original .archive-brand,
-.about-original .navbar-brand {
-  font-size: 1.7rem;
-}
-
 .about-original .archive-lead,
 .about-original p {
   color: #222;
+}
+
+.about-name {
+  display: inline-block;
+  cursor: default;
+  margin-bottom: 0;
+}
+
+.about-bio {
+  margin-top: 1.5rem;
+  max-width: 760px;
+  font-size: 0.92rem;
+  line-height: 1.65;
+}
+
+.about-hover-image {
+  position: fixed;
+  z-index: 2000;
+  width: min(260px, 42vw);
+  height: auto;
+  opacity: 0;
+  pointer-events: none;
+  transform: translate3d(0, 0, 0);
+  transition: opacity 160ms ease;
+}
+
+.about-hover-image.is-visible {
+  opacity: 1;
 }
 
 .about-toggle {
@@ -1368,6 +1387,10 @@ div.sticky {
 
 .single-nav .navbar-brand {
   margin-right: 2rem;
+  min-width: 12.5rem;
+  line-height: 1.2;
+  padding-top: 0;
+  padding-bottom: 0;
 }
 
 .single-nav .archive-page-nav a {
@@ -1411,7 +1434,15 @@ div.sticky {
 }
 
 .contact-page .archive-page h1 {
-  font-size: clamp(2rem, 4vw, 3.8rem);
+  font-size: clamp(1.15rem, 2vw, 1.6rem);
+  line-height: 1.15;
+  font-weight: 500;
+}
+
+.about-original .archive-page .about-name {
+  font-size: clamp(1.15rem, 2vw, 1.6rem);
+  line-height: 1.15;
+  font-weight: 500;
 }
 
 .contact-page .archive-lead {

@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>About | My Personal Archive</title>
+  <title>About me</title>
   <meta content="About Enrique Sanz-Gadea." name="description">
   <meta content="architecture, portfolio, Enrique Sanz-Gadea" name="keywords">
 
@@ -25,7 +25,7 @@
 
   <nav class="navbar navbar-light custom-navbar archive-navbar single-nav">
     <div class="container">
-      <span class="navbar-brand"><a class="mipers" href="index.html" style="text-decoration: none"><span>About Me.</span></a></span>
+      <a class="navbar-brand archive-brand mipers" href="index.html"><span>About Me.</span></a>
       <div class="archive-page-nav" aria-label="Main navigation">
         <a href="index.html">Index</a>
         <a class="active" href="about.html">About</a>
@@ -35,75 +35,15 @@
   </nav>
 
   <main id="main">
-    <section class="section pb-5">
+    <section class="section pb-5 archive-page">
       <div class="container">
-        <div class="row mb-5 align-items-end">
-          <div class="col-md-12 col-lg-6 mb-4 mb-lg-0" data-aos="fade-up">
-            <h2>I'm <b>Enrique Sanz-Gadea</b></h2>
-            <p class="mb-0">Artist &amp; Architecture Student.</p>
-            <br>
-            <p class="mb-0">I am a fourth year architecture student from Madrid, currently doing an interchange in Seoul. Right now I'm in quarantine building this website.</p>
-          </div>
-        </div>
-
         <div class="row mb-5">
-          <div class="col-md-6 mb-5" data-aos="fade-up">
-            <p><img src="assets/img/profile.jpg" alt="Portrait of Enrique Sanz-Gadea" class="img-fluid"></p>
-            <p>This page is still part of the archive in progress: a place for a short biography, references, tools and work notes.</p>
-            <p>I am interested in architecture, images, objects, digital processes and the way a project can be built through fragments.</p>
-            <p>The website keeps that same logic: an index where finished projects and ongoing experiments can live together.</p>
-          </div>
-
-          <div class="col-md-4 ml-md-5 ml-0" data-aos="fade-up">
-            <p>
-              <h3 class="h3 mb-4 about-toggle" data-toggle="collapse" href="#collapse1" onclick="changeImg1()" role="button" aria-expanded="false" aria-controls="collapse1">
-                Computer Skills <img src="assets/svg/chevron-down.svg" id="myImg1" width="20" height="20" alt="">
-              </h3>
-            </p>
-            <div class="collapse" id="collapse1">
-              <ul class="list-unstyled">
-                <li class="mb-3">
-                  <div class="d-flex mb-1"><strong>Rhinoceros</strong></div>
-                  <div class="progress custom-progress"><div class="progress-bar" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div></div>
-                </li>
-                <li class="mb-3">
-                  <div class="d-flex mb-1"><strong>Photoshop</strong></div>
-                  <div class="progress custom-progress"><div class="progress-bar" role="progressbar" style="width: 96%" aria-valuenow="96" aria-valuemin="0" aria-valuemax="100"></div></div>
-                </li>
-                <li class="mb-3">
-                  <div class="d-flex mb-1"><strong>HTML5/CSS3</strong></div>
-                  <div class="progress custom-progress"><div class="progress-bar" role="progressbar" style="width: 99%" aria-valuenow="99" aria-valuemin="0" aria-valuemax="100"></div></div>
-                </li>
-                <li class="mb-3">
-                  <div class="d-flex mb-1"><strong>Python</strong></div>
-                  <div class="progress custom-progress"><div class="progress-bar" role="progressbar" style="width: 15%" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100"></div></div>
-                </li>
-                <li class="mb-3">
-                  <div class="d-flex mb-1"><strong>Blender</strong></div>
-                  <div class="progress custom-progress"><div class="progress-bar" role="progressbar" style="width: 85%" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div></div>
-                </li>
-                <li class="mb-3">
-                  <div class="d-flex mb-1"><strong>Autodesk Fusion 360</strong></div>
-                  <div class="progress custom-progress"><div class="progress-bar" role="progressbar" style="width: 88%" aria-valuenow="88" aria-valuemin="0" aria-valuemax="100"></div></div>
-                </li>
-              </ul>
-            </div>
-
-            <p>
-              <h3 class="h3 mb-4 about-toggle" data-toggle="collapse" href="#collapse2" onclick="changeImg2()" role="button" aria-expanded="false" aria-controls="collapse2">
-                Cooking Skills <img src="assets/svg/chevron-down.svg" id="myImg2" width="20" height="20" alt="">
-              </h3>
-            </p>
-            <div class="collapse" id="collapse2">
-              <ul class="list-unstyled">
-                <li class="mb-3">
-                  <div class="d-flex mb-1"><h6><b>Fried egg</b></h6></div>
-                  <div class="progress custom-progress"><div class="progress-bar" role="progressbar" style="width: 30%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div></div>
-                </li>
-              </ul>
-            </div>
+          <div class="col-md-10 col-lg-7" data-aos="fade-up">
+            <h1 class="about-name" data-hover-image="assets/img/profile.jpg">Enrique Sanz-Gadea</h1>
+            <p class="archive-lead about-bio">Architect trained at ETSAM with professional experience at Lacaton &amp; Vassal in Paris, contributing to large-scale cultural, residential and urban projects from concept design to competition submission. Skilled in architectural design, 3D modelling, spatial analysis and visual communication, with a strong interest in environmental strategy, technology and complex systems.</p>
           </div>
         </div>
+        <img class="about-hover-image" src="assets/img/profile.jpg" alt="Portrait of Enrique Sanz-Gadea" aria-hidden="true">
       </div>
     </section>
   </main>
@@ -136,15 +76,26 @@
   <script src="assets/vendor/owl.carousel/owl.carousel.min.js"></script>
   <script src="assets/js/main.js"></script>
   <script>
-    function changeImg1() {
-      var image = document.getElementById('myImg1');
-      image.src = image.src.match("assets/svg/chevron-down.svg") ? "assets/svg/chevron-up.svg" : "assets/svg/chevron-down.svg";
-    }
+    (function() {
+      var name = document.querySelector('.about-name');
+      var image = document.querySelector('.about-hover-image');
+      if (!name || !image) return;
 
-    function changeImg2() {
-      var image = document.getElementById('myImg2');
-      image.src = image.src.match("assets/svg/chevron-down.svg") ? "assets/svg/chevron-up.svg" : "assets/svg/chevron-down.svg";
-    }
+      var moveImage = function(event) {
+        image.style.left = event.clientX + 18 + 'px';
+        image.style.top = event.clientY + 18 + 'px';
+      };
+
+      name.addEventListener('mouseenter', function(event) {
+        moveImage(event);
+        image.classList.add('is-visible');
+      });
+
+      name.addEventListener('mousemove', moveImage);
+      name.addEventListener('mouseleave', function() {
+        image.classList.remove('is-visible');
+      });
+    })();
   </script>
 </body>
 
