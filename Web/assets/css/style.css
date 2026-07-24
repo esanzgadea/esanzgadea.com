@@ -139,27 +139,6 @@ h1, h2, h3, h4, h5, h6, .font-heading {
   visibility: visible;
 }
 
-.testimonial-wrap {
-  padding: 50px 50px 80px 50px;
-  background: #eceff2;
-}
-
-.testimonial-wrap .testimonial {
-  text-align: center;
-  max-width: 500px;
-  margin: 0 auto;
-}
-
-.testimonial-wrap .testimonial img {
-  border-radius: 50%;
-  width: 120px;
-  margin: 0 auto 30px auto;
-}
-
-.testimonial-wrap .testimonial blockquote p {
-  font-size: 20px;
-}
-
 .h3 {
   font-size: 20px;
 }
@@ -191,34 +170,6 @@ h1, h2, h3, h4, h5, h6, .font-heading {
   color: #fff;
   text-decoration: none;
   background: #000;
-}
-
-.testimonial-carousel .owl-dots {
-  position: absolute;
-  bottom: 40px;
-  width: 100%;
-  text-align: center;
-}
-
-.testimonial-carousel .owl-dots .owl-dot {
-  display: inline-block;
-}
-
-.testimonial-carousel .owl-dots .owl-dot > span {
-  display: inline-block;
-  width: 7px;
-  height: 7px;
-  background-color: #cbd3da;
-  border-radius: 50%;
-  margin: 5px;
-}
-
-.testimonial-carousel .owl-dots .owl-dot.active {
-  outline: none;
-}
-
-.testimonial-carousel .owl-dots .owl-dot.active > span {
-  background: #0d1e2d;
 }
 
 .sticky-content {
@@ -257,84 +208,6 @@ h1, h2, h3, h4, h5, h6, .font-heading {
   outline: none;
   box-shadow: none;
   border: 1px solid transparent;
-}
-
-.custom-progress {
-  height: 7px;
-  border-radius: 0;
-}
-
-.custom-progress .progress-bar {
-  background: #000;
-}
-
-/* Contact Form */
-.php-email-form .validate {
-  display: none;
-  color: red;
-  margin: 0 0 15px 0;
-  font-weight: 400;
-  font-size: 13px;
-}
-
-.php-email-form .error-message {
-  display: none;
-  color: #fff;
-  background: #ed3c0d;
-  text-align: left;
-  padding: 15px;
-  font-weight: 600;
-}
-
-.php-email-form .error-message br + br {
-  margin-top: 25px;
-}
-
-.php-email-form .sent-message {
-  display: none;
-  color: #fff;
-  background: #18d26e;
-  text-align: center;
-  padding: 15px;
-  font-weight: 600;
-}
-
-.php-email-form .loading {
-  display: none;
-  background: #fff;
-  text-align: center;
-  padding: 15px;
-}
-
-.php-email-form .loading:before {
-  content: "";
-  display: inline-block;
-  border-radius: 50%;
-  width: 24px;
-  height: 24px;
-  margin: 0 10px -6px 0;
-  border: 3px solid #18d26e;
-  border-top-color: #eee;
-  -webkit-animation: animate-loading 1s linear infinite;
-  animation: animate-loading 1s linear infinite;
-}
-
-@-webkit-keyframes animate-loading {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes animate-loading {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
 }
 
 /*--------------------------------------------------------------
@@ -477,29 +350,6 @@ h1, h2, h3, h4, h5, h6, .font-heading {
 }
 
 .footer a {
-  color: #000;
-}
-
-.social a {
-  display: inline-block;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  background: #f8f9fa;
-  position: relative;
-  text-align: center;
-  color: #0d1e2d;
-}
-
-.social a span {
-  display: inline-block;
-  left: 50%;
-  position: absolute;
-  top: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.social a:hover {
   color: #000;
 }
 
@@ -777,48 +627,11 @@ div.sticky {
   padding-top: 32px;
 }
 
-.archive-hero {
-  min-height: calc(100vh - 98px);
-  padding: 4rem 0 5rem;
-  display: flex;
-  align-items: center;
-}
-
-.archive-hero-grid {
-  display: grid;
-  grid-template-columns: minmax(0, 0.9fr) minmax(320px, 1.1fr);
-  gap: 4rem;
-  align-items: center;
-}
-
-.archive-kicker {
-  margin-bottom: 1rem;
-  font-size: 0.78rem;
-  text-transform: uppercase;
-  letter-spacing: 0;
-  color: #7a2e1f;
-}
-
-.archive-hero h1 {
-  max-width: 760px;
-  margin-bottom: 1.25rem;
-  font-size: clamp(3rem, 8vw, 7rem);
-  line-height: 0.92;
-  letter-spacing: 0;
-}
-
 .archive-lead {
   max-width: 600px;
   font-size: clamp(1.1rem, 2vw, 1.55rem);
   line-height: 1.35;
   color: #333;
-}
-
-.archive-actions {
-  display: flex;
-  align-items: center;
-  gap: 1.25rem;
-  margin-top: 2rem;
 }
 
 .archive-text-link {
@@ -830,65 +643,9 @@ div.sticky {
   text-decoration: none;
 }
 
-.archive-visual {
-  position: relative;
-  min-height: 520px;
-  border: 1px solid rgba(21, 21, 21, 0.22);
-  background: #e1ded4;
-  overflow: hidden;
-}
-
-.archive-visual:before {
-  content: "";
-  position: absolute;
-  inset: 24px;
-  border: 1px solid rgba(21, 21, 21, 0.14);
-  pointer-events: none;
-}
-
-#archive-map {
-  display: block;
-  width: 100%;
-  height: 100%;
-  min-height: 520px;
-}
-
-.archive-visual-label {
-  position: absolute;
-  right: 22px;
-  bottom: 20px;
-  display: grid;
-  gap: 0.15rem;
-  padding: 0.75rem 0.9rem;
-  background: rgba(244, 241, 235, 0.86);
-  border: 1px solid rgba(21, 21, 21, 0.18);
-}
-
-.archive-visual-label span,
-.archive-visual-label strong {
-  font-size: 0.78rem;
-  text-transform: uppercase;
-  letter-spacing: 0;
-}
-
 .archive-section {
   padding-top: 5rem;
   background: #fbfaf7;
-}
-
-.archive-toolbar {
-  display: flex;
-  justify-content: space-between;
-  gap: 1.5rem;
-  align-items: end;
-  margin-bottom: 3rem;
-  border-top: 1px solid rgba(21, 21, 21, 0.18);
-  padding-top: 1.5rem;
-}
-
-.archive-toolbar h2 {
-  margin: 0;
-  font-size: clamp(2rem, 4vw, 4.5rem);
 }
 
 .archive-search {
@@ -919,60 +676,12 @@ div.sticky {
   border-color: #7a2e1f;
 }
 
-.archive-summary {
-  max-width: 440px;
-  color: #555;
-}
-
 .archive-filters a {
   margin-bottom: 0.4rem;
 }
 
 .archive-grid .item {
   margin-bottom: 44px;
-}
-
-.archive-card {
-  position: relative;
-}
-
-.archive-card .item-wrap {
-  aspect-ratio: 4 / 5;
-  background: #e1ded4;
-}
-
-.archive-card .item-wrap img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.archive-card .item-wrap:after {
-  background: rgba(21, 21, 21, 0.58);
-}
-
-.archive-card-meta {
-  display: grid;
-  grid-template-columns: 70px 1fr;
-  gap: 0 1rem;
-  padding-top: 0.75rem;
-  border-top: 1px solid rgba(21, 21, 21, 0.18);
-}
-
-.archive-card-meta span {
-  grid-row: span 2;
-  color: #7a2e1f;
-  font-size: 0.82rem;
-}
-
-.archive-card-meta strong {
-  font-weight: 600;
-}
-
-.archive-card-meta em {
-  color: #4d6258;
-  font-size: 0.86rem;
-  font-style: normal;
 }
 
 .archive-empty {
@@ -1036,51 +745,6 @@ div.sticky {
   display: block;
 }
 
-@media (max-width: 991px) {
-  .archive-hero {
-    min-height: auto;
-    padding-top: 2.5rem;
-  }
-
-  .archive-hero-grid {
-    grid-template-columns: 1fr;
-    gap: 2.5rem;
-  }
-
-  .archive-visual,
-  #archive-map {
-    min-height: 390px;
-  }
-
-  .archive-toolbar {
-    display: block;
-  }
-
-  .archive-search {
-    margin-top: 1.5rem;
-  }
-}
-
-@media (max-width: 575px) {
-  .archive-hero h1 {
-    font-size: 3.2rem;
-  }
-
-  .archive-actions {
-    align-items: flex-start;
-    flex-direction: column;
-  }
-
-  .archive-visual,
-  #archive-map {
-    min-height: 310px;
-  }
-
-  .archive-card .item-wrap {
-    aspect-ratio: 1 / 1;
-  }
-}
-
 /* Minimal archive direction */
 
 .archive-home {
@@ -1109,6 +773,11 @@ div.sticky {
 .archive-home .footer .credits {
   font-size: 70%;
   line-height: 1.35;
+}
+
+.archive-credit {
+  color: #999;
+  font-weight: 300;
 }
 
 .archive-footer-text a:hover {
@@ -1334,6 +1003,11 @@ div.sticky {
   margin-left: 4%;
 }
 
+.archive-piece-i {
+  width: 24%;
+  margin-left: 7%;
+}
+
 .archive-project {
   display: flex;
   flex-direction: column;
@@ -1391,6 +1065,10 @@ div.sticky {
 
 .archive-piece-h .archive-project {
   --archive-ratio: 1.45 / 1;
+}
+
+.archive-piece-i .archive-project {
+  --archive-ratio: 1.48 / 1;
 }
 
 .minimal-index .archive-project > .work-info {
@@ -1687,9 +1365,10 @@ div.sticky {
 .project-image-frame figcaption {
   max-width: min(760px, 100%);
   margin-top: 0.65rem;
-  color: #333;
-  font-size: 0.78rem;
-  line-height: 1.4;
+  color: #777;
+  font-size: 0.72rem;
+  font-weight: 300;
+  line-height: 1.42;
 }
 
 .project-page .archive-page > .container {
@@ -1813,6 +1492,14 @@ div.sticky {
   line-height: 1.35;
 }
 
+.project-page figure > figcaption {
+  margin-top: 0.42rem;
+  color: #7a7a7a !important;
+  font-size: 0.72rem !important;
+  font-weight: 300;
+  line-height: 1.42;
+}
+
 .about-hover-image {
   position: fixed;
   z-index: 2000;
@@ -1870,7 +1557,8 @@ div.sticky {
   .archive-piece-e,
   .archive-piece-f,
   .archive-piece-g,
-  .archive-piece-h {
+  .archive-piece-h,
+  .archive-piece-i {
     width: 40%;
     margin-left: 5%;
   }
@@ -1917,7 +1605,8 @@ div.sticky {
   .archive-piece-e,
   .archive-piece-f,
   .archive-piece-g,
-  .archive-piece-h {
+  .archive-piece-h,
+  .archive-piece-i {
     width: 100%;
     margin-left: 0;
     padding-left: 0;

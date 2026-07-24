@@ -57,9 +57,10 @@
     };
 
     var updateArchiveCount = function() {
-      var total = $container.find('.item').length;
+      var total = $container.find('.archive-piece').length;
       var visible = $container.data('isotope') ? $container.data('isotope').filteredItems.length : total;
       $('#archive-count').text(visible);
+      $('#archive-count-label').text(visible === 1 ? 'entry' : 'entries');
       $('.archive-empty').remove();
       if (total && !visible) {
         $container.after('<p class="archive-empty">No entries match this search.</p>');
@@ -167,6 +168,78 @@
       deleteText();
     };
   }
+
+  var autoProjectGallery = function() {
+    $('[data-auto-gallery]').each(function() {
+      var gallery = this;
+      var $gallery = $(gallery);
+      var basePath = $gallery.attr('data-gallery-path') || 'assets/images/';
+      var maxImages = parseInt($gallery.attr('data-gallery-max') || '15', 10);
+      var startIndex = parseInt($gallery.attr('data-gallery-start') || '0', 10);
+      var altText = $gallery.attr('data-gallery-alt') || 'Project image';
+      var extensions = ($gallery.attr('data-gallery-extensions') || 'jpg,png,jpeg,webp').split(',');
+      var pending = maxImages - startIndex + 1;
+      var foundImages = [];
+
+      if ($gallery.data('gallery-ready')) return;
+      $gallery.data('gallery-ready', true);
+
+      var renderGallery = function() {
+        if (pending > 0) return;
+        foundImages.sort(function(a, b) {
+          return a.index - b.index;
+        });
+        foundImages.forEach(function(item) {
+          addImage(item.src, item.index);
+        });
+        gallery.setAttribute('data-gallery-loaded', 'true');
+        gallery.dispatchEvent(new CustomEvent('auto-gallery-ready'));
+      };
+
+      var addImage = function(src, index) {
+        var figure = document.createElement('figure');
+        figure.className = 'project-image';
+
+        var image = document.createElement('img');
+        image.src = src;
+        image.className = 'img-fluid project-lightbox-image';
+        image.alt = altText + ' ' + index;
+
+        figure.appendChild(image);
+        gallery.appendChild(figure);
+      };
+
+      var tryImage = function(index, extensionIndex) {
+        if (extensionIndex >= extensions.length) {
+          pending -= 1;
+          renderGallery();
+          return;
+        }
+
+        var extension = extensions[extensionIndex].trim();
+        var src = basePath + index + '.' + extension;
+        var image = new Image();
+
+        image.onload = function() {
+          foundImages.push({ src: src, index: index });
+          pending -= 1;
+          renderGallery();
+        };
+
+        image.onerror = function() {
+          tryImage(index, extensionIndex + 1);
+        };
+
+        image.src = src;
+      };
+
+      for (var index = startIndex; index <= maxImages; index += 1) {
+        tryImage(index, 0);
+      }
+    });
+  }
+
+  autoProjectGallery();
 
   $(window).on('load', function() {
     siteIstotope();
