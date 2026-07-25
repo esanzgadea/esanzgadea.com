@@ -180,12 +180,19 @@
       var extensions = ($gallery.attr('data-gallery-extensions') || 'jpg,png,jpeg,webp').split(',');
       var pending = maxImages - startIndex + 1;
       var foundImages = [];
+      var loader = document.createElement('div');
 
       if ($gallery.data('gallery-ready')) return;
       $gallery.data('gallery-ready', true);
+      $gallery.addClass('is-loading');
+      loader.className = 'project-gallery-loader';
+      loader.setAttribute('aria-label', 'Loading project images');
+      gallery.appendChild(loader);
 
       var renderGallery = function() {
         if (pending > 0) return;
+        if (loader.parentNode) loader.parentNode.removeChild(loader);
+        $gallery.removeClass('is-loading');
         foundImages.sort(function(a, b) {
           return a.index - b.index;
         });
