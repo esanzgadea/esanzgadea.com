@@ -178,6 +178,7 @@
       var startIndex = parseInt($gallery.attr('data-gallery-start') || '0', 10);
       var altText = $gallery.attr('data-gallery-alt') || 'Project image';
       var extensions = ($gallery.attr('data-gallery-extensions') || 'jpg,png,jpeg,webp').split(',');
+      var cacheVersion = $gallery.attr('data-gallery-version') || '';
       var pending = maxImages - startIndex + 1;
       var foundImages = [];
       var loader = document.createElement('div');
@@ -224,7 +225,7 @@
         }
 
         var extension = extensions[extensionIndex].trim();
-        var src = basePath + index + '.' + extension;
+        var src = basePath + index + '.' + extension + (cacheVersion ? '?v=' + encodeURIComponent(cacheVersion) : '');
         var image = new Image();
 
         image.onload = function() {
