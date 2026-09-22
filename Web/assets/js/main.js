@@ -92,14 +92,15 @@
   }
 
   var archivePreview = function() {
-    $('.archive-project[data-preview]').each(function() {
-      var $project = $(this);
+    var initializePreview = function($project, images) {
       var $image = $project.find('img').first();
-      var images = $project.attr('data-preview').split('|').filter(Boolean);
-      var original = $image.attr('src');
+      var original = images[0] || $image.attr('src');
       var index = 0;
       var timer = null;
 
+      if (!images.length) return;
+
+      $image.attr('src', original);
       if (images.length < 2) return;
 
       images.forEach(function(src) {
@@ -130,6 +131,50 @@
         index = 0;
         $image.attr('src', original);
       });
+    };
+
+    $('.archive-project[data-preview]').each(function() {
+      var $project = $(this);
+      var images = ($project.attr('data-preview') || '').split('|').filter(Boolean);
+      initializePreview.call(this, $project, images);
+    });
+
+    $('.archive-project[data-auto-preview]').each(function() {
+      var project = this;
+      var $project = $(project);
+      var basePath = $project.attr('data-preview-path') || '';
+      var startIndex = parseInt($project.attr('data-preview-start') || '1', 10);
+      var extensions = ($project.attr('data-preview-extensions') || 'jpg,png,jpeg,webp,gif').split(',');
+      var cacheVersion = $project.attr('data-preview-version') || '';
+      var images = [];
+
+      var finish = function() {
+        initializePreview.call(project, $project, images);
+      };
+
+      var tryIndex = function(index, extensionIndex) {
+        if (extensionIndex >= extensions.length) {
+          finish();
+          return;
+        }
+
+        var extension = extensions[extensionIndex].trim();
+        var src = basePath + index + '.' + extension + (cacheVersion ? '?v=' + encodeURIComponent(cacheVersion) : '');
+        var preload = new Image();
+
+        preload.onload = function() {
+          images.push(src);
+          tryIndex(index + 1, 0);
+        };
+
+        preload.onerror = function() {
+          tryIndex(index, extensionIndex + 1);
+        };
+
+        preload.src = src;
+      };
+
+      tryIndex(startIndex, 0);
     });
   }
 
